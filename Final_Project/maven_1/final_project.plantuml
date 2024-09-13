@@ -1,0 +1,106 @@
+@startuml
+
+Class Main {
+    List<Item> items
+    List<Customer> customers
+    List<WarehouseLocation> locations
+    List<Order> orders
+    Scanner scanner
+    String itemID
+    String itemName
+    String itemDescription
+    String locationID
+    String locationDescription
+    String customerID
+    String customerName
+    String customerContact
+    String orderStatus
+    int itemQuantity
+    int locationCapacity
+    int orderID
+    double itemPrice
+    boolean exists
+    Item item1
+    Item item2
+    Item item3
+    Customer customer1
+    Customer customer2
+    Customer customer3
+    WarehouseLocation loc1
+    WarehouseLocation loc2
+    WarehouseLocation loc3
+    + main()
+}
+
+Class Item {
+    - String itemID
+    - String name
+    - String description
+    - int quantity
+    - double price
+    
+    + <<constructor>> Item(String itemID, String name, String description, int quantity, double price)
+    + String getItemID()
+    + void setItemID(String itemID)
+    +  String getName()
+    + void setName(String name)
+    + String getDescription()
+    + void setDescription(String description)
+    + int getQuantity()
+    + void setQuantity(int quantity)
+    + double getPrice()
+    + void setPrice(double price)
+    + void displayItem()
+}
+
+Class WarehouseLocation {
+    - String locationID
+    - String description
+    - int capacity
+    + <<constructor>> WarehouseLocation(String locationID, String description, int capacity)
+    + String getLocationID()
+    + void setLocationID(String locationID)
+    + String getDescription()
+    + void setDescription(String description)
+    + int getCapacity()
+    + void setCapacity(int capacity)
+    + void updateLocation(String description, int capacity)
+    + void displayLocation()
+
+}
+
+Class Customer {
+    - String customerID
+    - String name
+    - String contactInformation
+    + <<constructor>> Customer(String customerID, String name, String contactInformation)
+    + String getCustomerID()
+    + void setCustomerID(String customerID)
+    + String getName()
+    + void setName(String name)
+    + String getContactInformation()
+    + void setContactInformation(String contactInformation)
+    + updateCustomer(String name, String contactInformation)
+    + void displayCustomer()
+}
+
+Class Order {
+    - int orderID
+    - Customer customer
+    - List<Item> items
+    - String status
+    + <<constructor>> Order(int orderID, Customer customer, List<Item> items, String status)
+    + int getOrderID()
+    + void setOrderID(int orderID)
+    + Customer getCustomer()
+    + void setCustomer(Customer customer)
+    + List<Item> getItems()
+    + void setItems(List<Item> items)
+    + String getStatus()
+    + void setStatus(String status
+    + void updateOrder(List<Item> items, String status) 
+    + void deleteOrder(List<Item> items)
+    + void displayOrder()
+}
+
+@enduml
