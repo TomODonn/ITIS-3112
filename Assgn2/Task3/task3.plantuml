@@ -1,0 +1,13 @@
+@startuml
+
+scale 800 width
+class Main {
+    +int lineCount
+    +int wordCount
+    +int charCount
+    +String line
+    +String[] words
+    +void main()
+}
+
+@enduml

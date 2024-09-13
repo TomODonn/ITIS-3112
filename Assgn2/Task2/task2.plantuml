@@ -1,0 +1,52 @@
+@startuml task2
+scale 800 width
+
+class Main {
+    +University university
+    +Department dept1
+    +Department dept2
+    +Course course1
+    +Course course2
+    +Course course3
+    +Course course4
+    +Instructor instructor1
+    +Instructor instructor2
+    +Instructor instructor3
+    +Instructor instructor4
+    +void main()
+}
+
+class University{
+    +String name
+    +List<Department> departments
+    +Vehicle(String name)
+    +void addDepartment(Department department)
+    +void displayDetails()
+}
+
+class Department {
+    +String name
+    +List<Course> courses
+    +Department(String name)
+    +void addCourse(Course course)
+    +void displayDetails()
+}
+
+class Course{
+    +String name
+    +List<Instructor> instructors
+    +Course(String name)
+    +void addInstructor(Instructor instructor)
+    +void displayDetails()
+}
+
+class Instructor{
+    +String name
+    +Instructor(String name)
+    +void displayDetails()
+}
+
+University <|-- Department
+Department <|-- Course
+Course <|-- Instructor
+@enduml

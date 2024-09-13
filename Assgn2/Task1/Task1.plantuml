@@ -1,0 +1,32 @@
+@startuml task1
+scale 800 width
+class Main {
+    +Car car
+    +ElectricCar car2
+    +void main()
+}
+class Vehicle{
+    +String brand
+    +int year
+    +double result
+    +<<constructor>> Vehicle(String brand, int year)
+    +String getBrand()
+    +int getYear()
+    +void displayDetails()
+}
+class Car {
+    +String fuelType
+    +<<constructor>> Car(String brand, int year, String fuelType)
+    +String getFuelType()
+    +void displayDetails()
+}
+class ElectricCar{
+    +int batteryCapacity
+    +<<constructor>> ElectricCar(String brand, int year, int batteryCapacity)
+    +int getBatteryCapacity()
+    +void displayDetails()
+}
+
+Vehicle <|-- Car
+Vehicle <|-- ElectricCar
+@enduml
