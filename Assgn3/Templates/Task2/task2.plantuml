@@ -1,0 +1,31 @@
+@startuml task2
+scale 800 width
+class Main {
+    Rectangle rectangle
+    Triangle triangle
+    }
+
+class Shape {
+    #int sides
+    +<<constructor>> Shape(int sides)
+    +{abstract} double calculateArea()
+}
+
+class Rectangle {
+    -double width
+    -double height
+    +<<constructor>> Rectangle(double width, double height)
+    +double calculateArea()
+}
+
+class Triangle {
+    -double base
+    -double height
+    +<<constructor>> Triangle(double base, double height)
+    +double calculateArea()
+}
+
+Shape <|-- Rectangle
+Shape <|-- Triangle
+
+@enduml

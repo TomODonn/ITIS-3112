@@ -1,0 +1,30 @@
+@startuml task2
+scale 800 width
+class Main {
+    CheckingAccount checkingAccount
+    SavingsAccount savingsAccount
+}
+
+class BankAccount {
+    -int accountNumber
+    #double balance
+    +<<constructor>> BankAccount (int accountNumber, double balance)
+    +void deposit (double amount)
+    +void withdraw (double amount)
+    +void displayBalance()
+}
+
+class CheckingAccount {
+    +<<constructor>> CheckingAccount (int accountNumber, double balance)
+    +void withdraw (double amount)
+}
+
+class SavingsAccount {
+    +<<constructor>> SavingsAccount (int accountNumber, double balance)
+    +void withdraw (double amount)
+}
+
+BankAccount <|-- CheckingAccount
+BankAccount <|-- SavingsAccount
+
+@enduml

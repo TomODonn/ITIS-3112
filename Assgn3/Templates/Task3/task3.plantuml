@@ -1,0 +1,29 @@
+@startuml task3
+scale 800 width
+class Main {
+    Book book
+    Magazine magazine
+    }
+
+class LibraryItem {
+    #String title
+    #String author
+    +<<constructor>> LibraryItem(String title, String author)
+    +void displayDetails()
+}
+
+class Book {
+    +<<constructor>> Book(String title, String author)
+    +void displayDetails()
+}
+
+class Magazine {
+    -String publisher
+    +<<constructor>> Magazine(String title, String author)
+    +void displayDetails()
+}
+
+LibraryItem <|-- Book
+LibraryItem <|-- Magazine
+
+@enduml
