@@ -1,0 +1,34 @@
+@startuml
+
+class Main {
+ StudentManagementSystem system
+ Scanner scanner
+ Student student1
+ Student student2
+ Student student3
+ int choice
+ String id
+ Student student
+}
+
+class StudentManagementSystem {
+ - List<Student> students
+ + <<constructor>> StudentManagementSystem()
+ + List<Student> getStudents()
+ + void addStudent(Student student)
+ + Student searchStudentById(String id)
+ + void displayAllStudents()
+
+}
+
+class Student {
+ - String id
+ - String name
+ + <<constructor>> Student(String id, String name)
+ + String getId()
+ + String getName()
+ + void setId(String id)
+ + void setName(String name)
+ + String toString()
+}
+@enduml
